@@ -13,6 +13,12 @@ changespl = []
 last_profit_loss = 0
 
 
+max_change = -9999999999
+min_change = 9999999999
+max_month = ""
+min_month = ""
+
+
 # Open the CSV using the UTF-8 encoding
 with open(csvpath, encoding='UTF-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -24,25 +30,54 @@ with open(csvpath, encoding='UTF-8') as csvfile:
     # Read each row of data after the header, looping through row by row
     for row in csvreader:
         # print(row)
-    
+        
+        # Changes in profits and losses
+        # if no profit/loss change in first row, let x = 0 or last_profit_loss
+        # else, compute the profit/loss change amount
+        
+        if total_months != 0:
+            change = int(row[1]) - last_profit_loss
+            changespl.append(change)
+            
+            # locate the Max & Min change
+            if change > max_change:
+                max_change = change
+                max_month = row[0]
+            elif change < min_change:
+                min_change = change
+                min_month = row[0]
+            else:
+                pass # leave unchanged & proceed with locating range of values specified 
+                
+
+        #  calculate the amount using the previous month's profit/loss 
+        last_profit_loss = int(row[1])
+        
         # add 1 to total months counter
         total_months = total_months + 1
+        
+        # Add the variable to the sum of Profit/Losses
         total_sumpl = total_sumpl + int(row[1])
         
-        # calculate the changes in profit/losses
-        current_profit_loss = int(row[1])
-        change = current_profit_loss - last_profit_loss
-        changespl.append(change)
-        last_profit_loss = current_profit_loss
-            
+        
+        
+
+avg_change = sum(changespl) / len(changespl)    
+                
     
-# print out KPIs total number of months in dataset
+# show 5 KPI results analyzed using the budget csv financial dataset
 with open(txtpath, encoding='UTF-8',mode="w") as txtfile:
     output=(
         f"Financial Analysis\n"
         f"----------------------------------\n"
         f"Total Months: {total_months}\n"
         f"Total: {total_sumpl}\n"
+        f"Average Change: {avg_change}\n"
+        f"Greatest Profit Range Increase: {max_change}\n"
+        f"Date of Highest Profit Range: {max_month}\n"
+        f"Greatest Profit Range Decrease: {min_change}\n"
+        f"Date of Lowest Profit Range: {min_month}\n"
+        
         
     )
     print(output)
