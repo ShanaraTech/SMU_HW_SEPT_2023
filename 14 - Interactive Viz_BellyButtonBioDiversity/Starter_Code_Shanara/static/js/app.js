@@ -18,12 +18,12 @@ d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1
    let individual = data.names[0];
     console.log(individual);
     charts(individual)
+
     table(individual)
 })
 }
 function optionChanged(individual){
     charts(individual)
-
     table(individual)
 }
 function table(individual){
@@ -68,19 +68,22 @@ function charts(individual){
    let top10Labels = otu_labels.slice(0, 10);
 
 
-
-// create the textbox
-
-
-
 // Create a horizontal bar chart using Plotly
     let trace = {
        x: top10Values,
        y: top10Ids.map(id => `OTU ${id}`),
        text: top10Labels,
        type: "bar",
-       orientation: "h"
-   };
+       orientation: "h",
+       marker: {
+            color: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], // Assign a numerical value to each bar for the color scale
+            colorscale: "Picnic", // Choose a color scale (e.g., Viridis, Plasma, etc.)
+            reversescale: true, // This line flips the color scale
+            colorbar: {
+                title: "Color Scale"
+            }
+       }
+    };
 
    let bar_data = [trace];
 
@@ -92,8 +95,6 @@ function charts(individual){
 
 Plotly.newPlot("bar",bar_data, layout);
 
-
-
 // Create a bubble chart using Plotly
     let trace2 = {
         x: otu_ids,
@@ -104,7 +105,7 @@ Plotly.newPlot("bar",bar_data, layout);
         marker: {
             size: sample_values,
             color: otu_ids,
-            colorscale: "Viridis"
+            colorscale: "Picnic"
         }
     };
 
