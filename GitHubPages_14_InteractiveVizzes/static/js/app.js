@@ -67,10 +67,9 @@ function charts(individual){
    let top10Ids = otu_ids.slice(0, 10);
    let top10Labels = otu_labels.slice(0, 10);
 
-
 // Sort the top10Ids array in ascending order
     top10Ids.sort((a, b) => a - b);
-
+        
 // Create a horizontal bar chart using Plotly
     let trace = {
        x: top10Values,
