@@ -105,9 +105,15 @@ Plotly.newPlot("bar",bar_data, layout);
         marker: {
             size: sample_values,
             color: otu_ids,
-            colorscale: "Picnic"
+            colorscale: "Picnic",
+            reversescale: true, // This line flips the color scale
+            colorbar: {
+                title: "Color Scale",
+                tickvals: [1, 3, 5],
+                ticktext: ["Low", "Medium", "High"]
+            }
         }
-    };
+       };
 
     let bubble_data = [trace2];
 
