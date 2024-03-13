@@ -46,7 +46,7 @@ function makeMap(data, data2) {
 
       // Add new markers, and bind them to a popup using pop_text variable.
       let magnitude = row.properties.mag;
-      let popup_text = `<h1>${row.properties.title}</h1><hr><a href="${row.properties.url}" target="_blank">Link</a>`;
+      let popup_text = `<h2>${row.properties.title}</h2><hr><h4>magnitude:${magnitude}</h4><hr><h4>depth:${depth}</h4><hr><a href="${row.properties.url}" target="_blank">Link</a>`;
       let marker = L.marker(location).bindPopup(popup_text);
 
       // for the marker layer
