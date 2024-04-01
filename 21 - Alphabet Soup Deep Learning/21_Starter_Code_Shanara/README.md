@@ -1,5 +1,5 @@
 # Alphabet Soup: Neural Networks :electron:
-![Neural Networks](https://github.com/ShanaraTech/SMU_HW_SEPT_2023/assets/147120775/20992fe1-5c38-40a7-8cf4-0f7d6dc1e06b)
+![Neural Networks](https://github.com/ShanaraTech/SMU_HW_SEPT_2023/assets/147120775/27ab6979-ceeb-4be5-bf05-934ec8e9508c)
 Image Courtesy of [JJ Ying](https://unsplash.com/@jjying) 
 
 # Background:
