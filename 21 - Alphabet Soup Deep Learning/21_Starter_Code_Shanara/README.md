@@ -3,7 +3,7 @@
 Image Courtesy of [JJ Ying](https://unsplash.com/@jjying) 
 
 # Background:
-"The nonprofit foundation Alphabet Soup wants a tool to help it select the applicants for funding with the best chance of success in their ventures. Using Machine Learning and Neural Networks, create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. A CSV containing more than 34,000 organizations that have received funding from Alphabet Soup over the years has been provided as the initial dataset to perform this task. 
+"The nonprofit foundation Alphabet Soup wants a tool to help it select the applicants for funding with the best chance of success in their ventures. Using Machine Learning and Neural Networks, create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. A CSV containing more than 34,000 organizations that have received funding from Alphabet Soup over the years has been provided as the initial dataset to perform this task." 2024 edX Boot Camps, LLC 
 
 # Instructions
   - Step 1: Preprocess the Data
