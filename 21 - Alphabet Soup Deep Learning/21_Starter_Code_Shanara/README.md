@@ -12,7 +12,6 @@ Image Courtesy of [JJ Ying](https://unsplash.com/@jjying)
   - Step 4: Write a Report on the Neural Network Model
   - 
 # Analysis :fountain_pen:
-
 You can access my analytics PDF report, [Neural Network Model](https://docs.google.com/document/d/13zjIYC7_7mq5o7_XZQ2s1bufj5IEh-w9JMXKWKDixWQ/edit)
 
 # Programming, Languages, & Analytics  :woman_technologist:
